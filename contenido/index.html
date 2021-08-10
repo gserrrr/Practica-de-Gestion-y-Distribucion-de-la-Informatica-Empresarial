@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
+    <title>How to cook chili</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="interaccion.js"></script>
+    <script src="reproductor.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="fondoBlanco"> <!--fondo blanco-->
+        <div>
+        <div class="contizq"><!--izquierda-->
+            <div class="cont1"><!--video-->
+                <div id="arribaVideo">
+                    <h1>How to cook chili</h1>
+                    <div id="botonCambio">
+                        <a id="linkOtroFormato" href="https://alumnes-ltim.uib.es/gdie2104/indexHLS.html">Ver con HLS</a>
+                    </div>
+                </div>
+                <div id="player" width='854px'>
+                    <video id="myVideo">
+                        <track src="chilidatos.vtt" kind="metadata" id="trackMetadatos"> 
+                        <track src="sub_eng.vtt" kind="subtitles" label="English" srclang="en">
+                        <track src="sub_esp.vtt" kind="subtitles" label="Español" srclang="es">
+                    </video>
+                    
+                    <div id="reproductor">
+                        <input id="timeSlider" type="range" value='0' min='0' max="10000">
+                        <div id="controlesSinTiempo">
+                            <div id="itemsRepIzq" class="itemsRepIzqPequeño">
+                                <button class="itemrep" id="play_pause"><img class="svg itemrep" id="botonPP" src="iconos/play2.svg" alt="pausar/reanudar"></button>
+                                <p class="itemrep" id="tiempo">0:00 / 4:12</p>
+                                <div class="itemrep" id="volumen">
+                                    <img id = "volImg" class="svg itemrep" src="iconos/volumen.svg" alt="volumen">
+                                    <input id="volSlider" class="itemrep" type="range" value='0.25' min='0' max='1' step="0.01">
+                                </div>
+                            </div>
+                            <div id="itemsRepDer" class="itemsRepDerPequeño">
+                                <div class="itemrep masMenos10" id="-+10s">
+                                    <button id="-10s" class="itemrep menos10"><img class="svg itemrep svg10" src="iconos/-10s.svg" alt="retroceder 10s"></button>
+                                    <button id="+10s" class="itemrep mas10"><img class="svg itemrep svg10" src="iconos/+10s.svg" alt="avanzar 10s"></button>
+                                </div>
+                                <div class="dropdown itemrep">
+                                    <button id="sub" class="itemrep"><img class="svg itemrep svgCC" src="iconos/subtitulos.svg" alt="subtítulos"></button>
+                                    <div id="idiomas" class="dropdown-content">
+                                        <button id="subEsp" class="" onclick="cambiarSubtitulos('es')">Español</button>
+                                        <button id="subEng" class="" onclick="cambiarSubtitulos('en')">English</button>
+                                        <button id="subNone" class="subactivo" onclick="cambiarSubtitulos('none')">Desactivado</button>
+                                    </div>
+                                </div> 
+                                <button id="fullscreen" class="itemrep"><img class="svg itemrep" src="iconos/fullscreen.svg" alt="pantalla completa"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script src="dash.all.min.js"></script>
+                <script>
+                    if(dashjs.supportsMediaSource){
+                        var url = "videos/DASH/output.mpd";
+                        var player = dashjs.MediaPlayer().create();
+                        player.initialize(document.querySelector("#myVideo"), url, false);
+                    }else{
+                        alert("DASH no disponible, cambiando a HLS");
+                        window.location.href = "https://alumnes-ltim.uib.es/gdie2104/indexHLS.html";
+                    }
+                </script>
+            </div>
+            <div id="desc" class="cont2"><!--Descripción-->
+                <h3 id="pasoActual">Título base</h3>
+                <div id="cajaDesc">
+                    <p id="descripcion">Descripción base</p>
+                </div>
+            </div>
+        </div>
+        <div class="contder"><!--derecha-->
+            <div class="cont1"><!--pasos-->
+                <h2>Pasos</h2>
+                <div id="cajaPasos">
+                    <ul id="listaPasos">
+                       <!-- los elementos se añaden con js a partir del .vtt -->
+                    </ul>
+                </div>
+            </div>
+            <div id="listaing" class="cont2"><!--ingredientes-->
+                <h2>Ingredientes</h2>
+                <div id="cajaIngredientes" >
+                    <ul id="listaIngredientes" class="scroll4">
+                        <!-- los elementos se añaden con js a partir del .vtt -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- a partir de aquí es lo nuevo-->
+        </div>
+        <div id="barraNegra"></div>
+        <button id="sincronizar">Sincronizar</button>
+        
+        <div id="video-chat-container">
+            <div id="camaraLider">
+                <div id="listos"><p>Listos: </p><p id="numPersonas"></p></div>
+                <div class="contCamara2">
+                    <video class="camaras" id="localVideo" autoplay playsinline></video>
+                </div>
+            </div>  
+            <!--<div class="contCamara">
+                <video class="camaras" id="remoteVideo" autoplay playsinline></video>
+            </div>-->
+        </div>
+        <!--<script src="controlCamara.js"></script>-->
+        <base href="http://alumnes-ltim.uib.es/gdie2104b/">
+        <script src="socket.io/socket.io.js"></script>
+
+        
+        <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+        <script src="main.js"></script>
+    </div>
+</body>
+</html>

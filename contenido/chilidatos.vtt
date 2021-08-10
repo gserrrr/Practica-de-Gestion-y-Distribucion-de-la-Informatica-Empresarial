@@ -1,0 +1,71 @@
+WEBVTT 
+
+0
+00:00:00.000 --> 00:00:09.000
+{
+"title": "Introducción",
+"description": "Hay miles de recetas de chili, algunas con decenas de ingredientes. Pero esta tiene solo 10 ingredientes.",
+"ingredientes":[],
+"imagen":[] ,
+"textoIngrediente":[]
+}
+
+1
+00:00:09.000 --> 00:00:46.000
+{
+"title": "Cocinar la carne",
+"description": "Doramos alrededor de un kilo de carne de vacuno poniendo la sartén a fuego medio-alto con una cucharadita de aceite, que quizá no necesitemos si la carne es más grasosa. La rompemos en la sartén y la dejamos reposar hasta que se forme una costra, entonces le damos la vuelta y hacemos lo mismo. Reservamos.",
+"ingredientes":["Carne_picada"],
+"imagen":["iconos/blanco/Carne_picada.svg"] ,
+"textoIngrediente":["1kg carne picada"]
+}
+
+2
+00:00:46.000 --> 00:01:25.000
+{
+"title": "Sofreir la cebolla y el ajo",
+"description": "En una tabla picamos finamente la cebolla y el ajo. Calentamos la olla de chile a fuego medio con un poco de aceite de oliva y salteamos la cebolla hasta que empiece a dorarse. Añade el ajo en los últimos minutos. Si es necesario, añadimos un chorro de aceite. Añadimos la carne picada y una pizca de sal. Con ayuda de una cuchara rompemos más los trozos de carne picada.",
+"ingredientes":["Cebolla", "Ajo", "Sal"],
+"imagen":["iconos/blanco/Cebolla.svg","iconos/blanco/Ajo.svg","iconos/blanco/Sal.svg"] ,
+"textoIngrediente":["1 cebolla","2 ajos","1 cda sal"]
+}
+
+3
+00:01:25.000 --> 00:02:10.000
+{
+"title": "Hacer la salsa",
+"description": "Añadimos a la olla la lata de tomate triturado y bajamos el fuego a fuego lento. Incorporamos el chile en polvo, el comino y un vaso de caldo de ternera, y removemos. Tapamos la olla y dejamos cocer a fuego lento.",
+"ingredientes":["Tomate_triturado", "Chile_en_polvo", "Comino", "Caldo_de_ternera"],
+"imagen":["iconos/blanco/Tomate_triturado.svg","iconos/blanco/Chile_en_polvo.svg","iconos/blanco/Comino.svg","iconos/blanco/Caldo_de_ternera.svg"] ,
+"textoIngrediente":["1 lata tomate triturado","2 cdas chile en polvo","1 cda comino","250ml caldo de ternera"]
+}
+
+4
+00:02:10.000 --> 00:02:56.000
+{
+"title": "Añadir los frijoles",
+"description": "Mientras el chili está en el fuego, abrimos la lata de frijoles y los escurrimos en el fregadero usando un colador. Los pasamos por agua para quitar los restos del líquido y escurrimos de nuevo. Los incorporamos al chili y añadimos una cucharada de azúcar moreno. Dejamos cocer sin tapa durante media o una hora más.",
+"ingredientes":["Azúcar_moreno", "Frijoles"],
+"imagen": ["iconos/blanco/Azúcar_moreno.svg","iconos/blanco/Frijoles.svg"],
+"textoIngrediente":["1/2 cda azúcar moreno","1 lata frijoles"]
+}
+
+5
+00:02:56.000 --> 00:03:39.000
+{
+"title": "Cocinar a fuego lento",
+"description": "Probamos el chili y corregimos de sal o especias. Opcionalmente se puede añadir salsa picante si se desea. Dejamos cocer sin tapa durante media o una hora más. Vamos removiendo de tanto en cuando.",
+"ingredientes":[],
+"imagen":[] ,
+"textoIngrediente":[]
+}
+
+6
+00:03:39.000 --> 00:04:12.000
+{
+"title": "Presentación del plato",
+"description": "Luego se añaden los aderezos, que no cuentan como ingredientes del chile, porque están encima, no dentro. No son realmente una parte del chile. Se sugiere servir con queso rallado, crema agria, cebolleta, tomate en dados, cilantro y chips de tortilla (totopos).", 
+"ingredientes":[],
+"imagen": [],
+"textoIngrediente":[]
+}
